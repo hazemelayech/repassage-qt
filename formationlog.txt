@@ -1,0 +1,19 @@
+#include <QLineEdit>
+#include <QValidator>
+#include <QIntValidator>
+#include <QDoubleValidator>
+#include <QRegExpValidator>
+#include <QRegularExpressionValidator>
+
+
+
+QIntValidator *intValidator = new QIntValidator(0, 100, this);
+lineEdit->setValidator(intValidator);
+
+
+QDoubleValidator *doubleValidator = new QDoubleValidator(0.0, 100.0, 2, this);
+lineEdit->setValidator(doubleValidator);
+
+QRegularExpression regex("[A-Za-z0-9]+");
+QRegularExpressionValidator *regexValidator = new QRegularExpressionValidator(regex, this);
+lineEdit->setValidator(regexValidator);
